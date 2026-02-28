@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CityCare Hospital</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+
+    /* BACKGROUND IMAGE */
+    background:
+        linear-gradient(rgba(255,255,255,0.75),
+                        rgba(255,255,255,0.75)),
+        url("hospital.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Header */
+.header {
+    background: rgba(28,166,205,0.9);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+}
+
+/* Main Container */
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255,255,255,0.85);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    backdrop-filter: blur(6px);
+}
+
+/* Doctor Cards */
+.doctor-card {
+    background: rgba(255,255,255,0.9);
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(21,21,21,0.1);
+    transition: 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.doctor-card:hover {
+    background: rgba(194, 220, 240, 0.9);
+    transform: translateX(4px);
+}
+
+.doctor-card .doc-info h3 {
+    margin: 0 0 4px;
+    color: #1565c0;
+}
+
+.doctor-card .doc-info p {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Queue Counter */
+.doc-queue {
+    text-align: right;
+    font-size: 13px;
+    color: #888;
+}
+
+.doc-queue .count {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1ca6cd;
+    display: block;
+}
+
+/* Buttons */
+button {
+    padding: 10px 18px;
+    background: #1565c0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d47a1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>CityCare Multispeciality Hospital</h1>
+    <p>Providing Quality Healthcare Since 2005</p>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>About Us</h2>
+        <p>
+            CityCare Hospital is a leading healthcare institution offering high-quality
+            medical services with experienced doctors and advanced medical technology.
+            We focus on patient care, safety, and fast service.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Facilities</h2>
+        <ul>
+            <li>24/7 Emergency Services</li>
+            <li>Advanced Diagnostic Labs</li>
+            <li>ICU & Operation Theatres</li>
+            <li>Pharmacy & Ambulance</li>
+            <li>Online Queue Management System</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Contact Information</h2>
+        <p><strong>Address:</strong> Main Road, Downtown City</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Email:</strong> info@citycarehospital.com</p>
+        <p><strong>Working Hours:</strong> 24 Hours Open</p>
+    </div>
+
+    <div class="card">
+        <h2>Available Doctors — Click to Join Queue</h2>
+        <div id="doctorList"></div>
+    </div>
+
+</div>
+
+<script src="data.js"></script>
+
+<script>
+const container = document.getElementById("doctorList");
+
+doctors.forEach(doc => {
+    const div = document.createElement("div");
+    div.className = "doctor-card";
+
+    div.innerHTML = `
+        <div class="doc-info">
+            <h3>${doc.name}</h3>
+            <p>${doc.department}</p>
+        </div>
+        <div class="doc-queue">
+            <span class="count">${doc.patientsToday ?? 0}</span>
+            in queue
+        </div>
+    `;
+
+    div.onclick = () => {
+        window.location.href = "userdoc.html?id=" + doc.id;
+    };
+
+    container.appendChild(div);
+});
+</script>
+
+</body>
+</html>
