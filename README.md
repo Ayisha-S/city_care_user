@@ -10,7 +10,8 @@
 * Member 2: Ananya Prakash – [GEC PALAKKAD]
 
 ### Hosted Project Link
-[https://drive.google.com/file/d/1qTOF_6uunr1d6APwsNffZI6_Pfllg78T/view?usp=sharing]
+[(https://ayisha-s.github.io/city_care_user/index.html)]
+[(https://ayisha-s.github.io/city_care_admin-/index.html)]
 
 ### Project Description
 
@@ -88,17 +89,19 @@ Open index.html in browser
 ### Video
 
 [(https://drive.google.com/file/d/1Gpm-Brbfd0duPPk08sSCUeQJg2oIqoTF/view?usp=drive_link)]
+[(https://drive.google.com/file/d/1Gpm-Brbfd0duPPk08sSCUeQJg2oIqoTF/view?usp=sharing)]
 
 **Video demonstrates:**
 
-* Adding patients
-* Waiting time countdown
-* Automatic audio alert
-* Queue management workflow
+Demo Shows:
+*Doctor selection
+*Queue visibility
+*Navigation flow
+*Hospital update interface
 
 ### Additional Demos
 
-* GitHub Repository: [(https://github.com/Ayisha-S/city_care_admin-)]
+* GitHub Repository: [(https://github.com/Ayisha-S/city_care_user)]
 
 ---
 
